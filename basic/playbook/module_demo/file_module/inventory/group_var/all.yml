@@ -1,0 +1,5 @@
+ansible_user: tom
+ansible_password: tom
+ansible_connection: ssh
+ansible_become: yes
+ansible_become_user: tom

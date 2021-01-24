@@ -1,0 +1,7 @@
+---
+- hosts: web
+  name: play-test
+  tasks:
+    - name: check host connection
+      ping:
+...

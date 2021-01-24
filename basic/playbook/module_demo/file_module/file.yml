@@ -1,0 +1,40 @@
+---
+
+  - name: file module
+    hosts: all
+    gather_facts: false
+    become: yes
+
+    tasks:
+    - name: Create a directory if it does not exist
+      file:
+        path: /etc/test
+        state: directory
+      
+    - name: copy file from local to remote
+      copy:
+        src: files/test.txt
+        dest: /etc/test/test.txt
+        backup: yes
+    
+#     - name: test template
+#       template:
+#         src: templates/test.j2
+#         dest: /etc/test/test.cfg
+    
+#     - name: fetch a file
+#       fetch:
+#         src: /etc/test/test.txt
+#         dest: ./tmp
+#         flat: yes
+    
+#     - name: Check that you can connect (GET) to a page and it return a status 200
+#       uri:
+#         url: https://www.google.com
+#         return_content: yes
+#       register: result
+
+#     - debug:
+#         var: result
+
+# ...
